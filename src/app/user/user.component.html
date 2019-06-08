@@ -1,0 +1,43 @@
+<div *ngIf="auth.user | async then user else login"></div>
+
+<ng-template #login>
+  <mat-card class="login-container" [@fadeIn]>
+    <mat-card-content>
+      <button mat-raised-button color="primary" (click)="auth.doGoogleLogin()">Login with Google</button>
+      <button mat-raised-button color="primary" disabled>Login with Email</button>
+      <button mat-raised-button color="primary" disabled>Login with Facebook</button>
+    </mat-card-content>
+  </mat-card>
+</ng-template>
+
+<ng-template #user>
+  <div class="profile-container" *ngIf="auth.user | async as user" [@fadeIn]>
+    <div class="profile-header">
+      <div class="img-wrapper">
+        <img [src]="user.photoURL || 'assets/profilephoto_default.jpg'" />
+      </div>
+      <h3>Welcome, {{user.displayName}}</h3>
+    </div>
+
+    <div class="profile-content">
+      <div class="progress-bar-wrapper">
+        <div class="progress-bar progress-complete">
+          <h2>30</h2>
+          <span>Beers completed</span>
+        </div>
+        <div class="progress-bar progress-todo">
+            <h2>30</h2>
+            <span>Beers to have</span>
+        </div>
+      </div>
+
+      <div class="profile-details">
+        <h3>Hier komt ooit meer content, mischien</h3>
+      </div>
+
+      <div class="buttons">
+        <button mat-raised-button color="warn" (click)="auth.signOut()">Logout</button>
+      </div>
+    </div>
+  </div>
+</ng-template>

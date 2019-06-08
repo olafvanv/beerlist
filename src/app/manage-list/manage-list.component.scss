@@ -1,0 +1,40 @@
+@import 'variables';
+
+.list-container{
+  padding-top:0;
+  padding-bottom:56px;
+
+  .mat-list-item{
+    // color:$text-color;
+  }
+}
+
+::ng-deep .mat-list-base{
+  .mat-list-item.beer-item{
+    .mat-list-item-content{
+      padding: 0 !important;
+    }
+  }
+}
+.button-container{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:10px 0px;
+  button{
+    width:95%;
+    margin:0 auto;
+    display:block;
+  }
+}
+
+
+@media (min-width: 599px){
+  .filter-bar{
+    top:64px;
+  }
+  .list-container{
+    padding-top:64px;
+  }
+}

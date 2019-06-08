@@ -1,0 +1,25 @@
+<div class="dialog-header">
+  <h3>Add beer</h3>
+  <mat-icon (click)="dialog.close()">close</mat-icon>
+</div>
+<div mat-dialog-content>
+  <form>
+    <mat-form-field>
+      <mat-label>Category</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let beer of beerList" [value]="beer.cat">
+          {{beer.cat}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field color="accent">
+      <input matInput placeholder="brand" required />
+    </mat-form-field>
+    <mat-form-field color="accent">
+      <input matInput placeholder="name" />
+    </mat-form-field>
+    <label>Percentage</label>
+    <mat-slider color="primary" max="30" min="0" step=".1" thumbLabel="true" tickInterval="10"></mat-slider>
+    <button mat-raised-button color="primary" class="submit-button" type="submit">Add</button>
+  </form>
+</div>
