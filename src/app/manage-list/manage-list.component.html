@@ -17,8 +17,8 @@
             </button>
             <mat-divider></mat-divider>
             <mat-menu #menu="matMenu">
-              <button mat-menu-item>
-                <mat-icon (click)="deleteBeer(beer)">delete</mat-icon>
+              <button mat-menu-item (click)="deleteBeer(cat, beer)"> 
+                <mat-icon>delete</mat-icon>
                 <span>Delete</span>
               </button>
             </mat-menu>
@@ -29,9 +29,8 @@
   </div>
   
   <div class="button-container">
-    <button mat-raised-button (click)="addBeer()" color="primary" [disabled]="">
+    <button mat-fab (click)="addBeer()" color="primary">
       <mat-icon>add</mat-icon>
-      Add Beer
     </button>
   </div>
 </div>

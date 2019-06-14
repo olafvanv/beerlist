@@ -20,21 +20,10 @@
   position:fixed;
   bottom:0;
   left:0;
-  right:0;
-  padding:10px 0px;
+  width:100%;
+  background-color: #fafafa;
   button{
-    width:95%;
-    margin:0 auto;
     display:block;
-  }
-}
-
-
-@media (min-width: 599px){
-  .filter-bar{
-    top:64px;
-  }
-  .list-container{
-    padding-top:64px;
+    margin:16px auto;
   }
 }

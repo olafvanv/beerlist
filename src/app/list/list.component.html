@@ -11,8 +11,8 @@
       
         <mat-list-item *ngFor="let beer of cat.beers | filter: searchInput:'brand'" [class.checked-item]="isBeerChecked(beer.checked)">
           <h4 mat-line>{{beer.brand}}</h4>
-          <p mat-line>{{beer.name}}  {{beer.perc}}</p>
-          <mat-checkbox class="checkbox" color="primary" [ngModel]="isBeerChecked(beer.checked)" (change)="checkBeer($event, beer)"></mat-checkbox>
+          <p mat-line>{{beer.name}} - {{beer.perc}}%</p>
+          <mat-checkbox class="checkbox" color="primary" [ngModel]="isBeerChecked(beer.checked)" (change)="checkBeer($event, cat, beer)"></mat-checkbox>
         </mat-list-item>
       </span>
     </mat-list>

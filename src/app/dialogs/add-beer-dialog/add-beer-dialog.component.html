@@ -1,25 +1,30 @@
 <div class="dialog-header">
   <h3>Add beer</h3>
-  <mat-icon (click)="dialog.close()">close</mat-icon>
+  <mat-icon (click)="close()">close</mat-icon>
 </div>
 <div mat-dialog-content>
-  <form>
-    <mat-form-field>
+  <form [formGroup]="addBeerForm" (ngSubmit)="addBeer(addBeerForm.value)" novalidate autocomplete="false">
+    <mat-form-field color="accent">
       <mat-label>Category</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let beer of beerList" [value]="beer.cat">
+      <mat-select formControlName="category">
+        <mat-option *ngFor="let beer of beerList" [value]="beer.id">
           {{beer.cat}}
         </mat-option>
       </mat-select>
+      <mat-error *ngIf="hasError('category', 'required')">Category is required</mat-error>
     </mat-form-field>
+
     <mat-form-field color="accent">
-      <input matInput placeholder="brand" required />
+      <input matInput placeholder="brand" formControlName="brand" />
+      <mat-error *ngIf="hasError('category', 'required')">Brand is required</mat-error>
     </mat-form-field>
+
     <mat-form-field color="accent">
-      <input matInput placeholder="name" />
+      <input matInput placeholder="name" formControlName="name" />
     </mat-form-field>
-    <label>Percentage</label>
-    <mat-slider color="primary" max="30" min="0" step=".1" thumbLabel="true" tickInterval="10"></mat-slider>
-    <button mat-raised-button color="primary" class="submit-button" type="submit">Add</button>
+
+    <mat-label>Percentage</mat-label>
+    <mat-slider color="primary" max="20" min="0" step=".1" thumbLabel="true" tickInterval="10" formControlName="percentage"></mat-slider>
+    <button mat-raised-button color="primary" class="submit-button" type="submit" [disabled]="addBeerForm.invalid">Add</button>
   </form>
 </div>

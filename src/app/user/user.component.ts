@@ -15,6 +15,9 @@ export class UserComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.auth.user.subscribe(data => {
+      console.log(data);
+    })
   }
 
 }

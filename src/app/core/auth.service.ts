@@ -60,7 +60,8 @@ export class AuthService {
       displayName: user.displayName,
       roles: {
         user: true
-      }
+      },
+      checkedBeers: []
     };
     return userRef.set(data, {merge: true});
   }

@@ -27,10 +27,11 @@ export class ListComponent implements OnInit {
     this.beerService.getBeerList().subscribe(data => {
       this.beerList = data.map(item => {
         return {
+          catId: item.payload.doc.id,
           cat: item.payload.doc.data()['cat'],
           beers: item.payload.doc.data()['beers']
         }
-      });
+      })
     });
   }
 
@@ -39,9 +40,10 @@ export class ListComponent implements OnInit {
     return checked > 0;
   }
 
-  checkBeer(ev: MatCheckboxChange, beer: Beer): void{
+  checkBeer(ev: MatCheckboxChange, cat:Category, beer: Beer): void{
     const userId = this.user.uid;
     const toggleTo = ev.checked;
+
 
     if(toggleTo){
       beer.checked.push(userId);
@@ -52,6 +54,8 @@ export class ListComponent implements OnInit {
       }
     }
 
-    console.log(beer);
+    const beers = this.beerList.find(item => item.catId === cat.catId).beers;
+    this.beerService.updateBeerChecked(cat.catId, beers);
+    // console.log(beer);
   }
 }
