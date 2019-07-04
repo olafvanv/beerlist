@@ -13,7 +13,6 @@ import { RegisterComponent } from './register/register.component';
 import { UserComponent } from './user/user.component';
 import { CoreModule } from './core/core.module';
 import { ListComponent } from './list/list.component';
-import { AuthGuard } from './core/auth.guard';
 import { ManageListComponent } from './manage-list/manage-list.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LoaderInterceptor } from './core/interceptors/loader-interceptor';
