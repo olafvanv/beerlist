@@ -1,11 +1,6 @@
 @import 'variables';
 
 .filter-bar{
-  position:fixed;
-  top:56px;
-  left:0;
-  right:0;
-  z-index:99;
   border-bottom: 1px solid $grey-dark;
 
   .search-input{
@@ -19,8 +14,6 @@
 
 
 .list-container{
-  padding-top:56px;
-
   .mat-list-item{
     background-color:#fff;
     border-bottom:1px solid $grey-dark;

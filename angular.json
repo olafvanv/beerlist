@@ -24,7 +24,8 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "src/sass/_material.scss",
@@ -35,7 +36,8 @@
                 "src/sass"
               ]
             },
-            "scripts": []
+            "scripts": [],
+            "aot": true
           },
           "configurations": {
             "production": {
@@ -57,10 +59,12 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
+                  "maximumWarning": "3mb",
                   "maximumError": "5mb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config.json"
             }
           }
         },
@@ -94,7 +98,8 @@
             "scripts": [],
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ]
           }
         },

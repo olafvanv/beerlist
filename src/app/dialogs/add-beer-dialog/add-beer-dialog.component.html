@@ -1,13 +1,13 @@
 <div class="dialog-header">
   <h3>Add beer</h3>
-  <mat-icon (click)="close()">close</mat-icon>
+  <mat-icon (click)="close(false)">close</mat-icon>
 </div>
 <div mat-dialog-content>
   <form [formGroup]="addBeerForm" (ngSubmit)="addBeer(addBeerForm.value)" novalidate autocomplete="false">
     <mat-form-field color="accent">
       <mat-label>Category</mat-label>
       <mat-select formControlName="category">
-        <mat-option *ngFor="let beer of beerList" [value]="beer.id">
+        <mat-option *ngFor="let beer of beerList" [value]="beer.catId">
           {{beer.cat}}
         </mat-option>
       </mat-select>

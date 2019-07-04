@@ -1,13 +1,49 @@
-@import 'variables';
+@import "variables";
 
-.sidenav{
-  min-width:300px;
+.sidenav {
+  min-width: 300px;
+  .menu-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    background-color:$primary-color;
+
+    .mat-list-item {
+      mat-icon {
+        margin-right: 10px;
+      }
+    }
+
+    .main-menu, .sub-menu {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 0;
+      opacity: 0.85;
+    }
+  }
 }
 
-.container{
-  position:absolute;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .sidenav-content {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+
+    .app-content {
+      flex: 1;
+      overflow: auto;
+      > * {
+        height: 100%;
+      }
+    }
+  }
 }

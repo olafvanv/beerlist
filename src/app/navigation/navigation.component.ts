@@ -27,7 +27,13 @@ export class NavigationComponent implements OnInit {
 
     this.auth.user.subscribe(user => {
       this.user = user;
+      console.log(user);
     });
+  }
+
+  logOut() {
+    this.auth.signOut();
+    this.router.navigate(['/user']);
   }
 
 }

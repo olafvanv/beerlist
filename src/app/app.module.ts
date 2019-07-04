@@ -20,6 +20,8 @@ import { LoaderInterceptor } from './core/interceptors/loader-interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FirestoreSettingsToken } from '@angular/fire/firestore';
 import { AddBeerDialog } from './dialogs/add-beer-dialog/add-beer-dialog.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { UserBlockComponent } from './navigation/user-block/user-block.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { AddBeerDialog } from './dialogs/add-beer-dialog/add-beer-dialog.compone
     ListComponent,
     ManageListComponent,
     NavigationComponent,
-    AddBeerDialog
+    AddBeerDialog,
+    UserBlockComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { AddBeerDialog } from './dialogs/add-beer-dialog/add-beer-dialog.compone
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    CoreModule
+    CoreModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     {

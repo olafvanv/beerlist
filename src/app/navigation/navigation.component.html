@@ -1,23 +1,38 @@
 <mat-sidenav-container class="container">
   <mat-sidenav class="sidenav" mode="over" #sidenav>
-    <mat-toolbar>
-      <h2>Menu</h2>
-    </mat-toolbar>
-    <mat-nav-list class="main-menu">
-      <mat-list-item [routerLink]="['/list']">
-        Checklist
-      </mat-list-item>
-      <mat-list-item [routerLink]="['/manage']" *ngIf="auth.canEdit(user)">
-        Manage List
-      </mat-list-item>
-      <mat-list-item [routerLink]="['/user']">
-        Profile
-      </mat-list-item>
-    </mat-nav-list>
+    <span class="menu-container">
+      <app-user-block></app-user-block>
+      <mat-nav-list class="main-menu">
+        <mat-list-item [routerLink]="['/list']">
+          <mat-icon>check</mat-icon>
+          Checklist
+        </mat-list-item>
+        <mat-list-item [routerLink]="['/manage']" *ngIf="auth.canEdit(user)">
+          <mat-icon>settings_applications</mat-icon>
+          Manage List
+        </mat-list-item>
+        <mat-list-item [routerLink]="['/user']">
+          <mat-icon>person</mat-icon>
+          <span *ngIf="user">Profile</span>
+          <span *ngIf="!user">Login</span>
+        </mat-list-item>
+      </mat-nav-list>
+
+      <mat-nav-list class="sub-nav" *ngIf="user">
+        <mat-list-item>
+          <mat-icon>settings</mat-icon>
+          Settings
+        </mat-list-item>
+        <mat-list-item (click)="logOut()" class="logout-item">
+          <mat-icon>launch</mat-icon>
+          Logout
+        </mat-list-item>
+      </mat-nav-list>
+    </span>
   </mat-sidenav>
 
-  <mat-sidenav-content>
-    <mat-toolbar class="fixed-toolbar" color="primary">
+  <mat-sidenav-content class="sidenav-content">
+    <mat-toolbar class="app-header" color="primary">
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>

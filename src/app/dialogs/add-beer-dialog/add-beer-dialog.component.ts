@@ -24,11 +24,11 @@ export class AddBeerDialog implements OnInit {
       this.beerList = data
       .map(item => {
         return {
-          id: item.payload.doc.id,
+          catId: item.payload.doc.id,
           cat: item.payload.doc.data()['cat']
         }
       })
-      .sort((a, b) => ( a.cat > b.cat ? 1 : -1))
+      .sort((a, b) => ( a.cat > b.cat ? 1 : -1));
     });
   }
 

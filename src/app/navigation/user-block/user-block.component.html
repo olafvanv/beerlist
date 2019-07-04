@@ -1,0 +1,6 @@
+<div class="user-block-container">
+  <div class="img-wrapper">
+    <img [src]="user?.photoURL || 'assets/profilephoto_default.jpg'" />
+  </div>
+  <h3 *ngIf="user"> {{ user.displayName }}</h3>
+</div>

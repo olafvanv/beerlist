@@ -2,15 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>BeerList</title>
+  <title>Beerlist</title>
   <base href="/">
   
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">  
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#efc025">
+  <meta name="theme-color" content="#efc025">
+
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/icon-60@3x.png">
+
+  <!-- iOS splash screens -->
+  <!-- iPhone 6+,6S+, 7+, 8+ -->
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="assets/splashscreens/iphone8+.png">
+  <!-- iPhone X, XS -->
+  <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="assets/splashscreens/iphonex.png">
+  <!-- iPhone XR -->
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/splashscreens/iphonexr.png">
+  <!-- iPhone XS Max-->
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="assets/splashscreens/iphonexsmax.png">
+
 </head>
 <body>
   <app-root></app-root>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
 </html>

@@ -1,65 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'variables';
+@import "variables";
 
-html, body { height: 100%; background-color:$grey}
-body { position:fixed; top:0; bottom:0; left:0; right:0;margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.mat-toolbar.fixed-toolbar{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:2;
+html,
+body {
+  height: 100%;
+  background-color: $grey;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.app-content{
-  position:relative;
-  margin-top:56px;
-  height:calc(100% - 56px);
+.mat-toolbar.fixed-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
 }
 
-.mat-checkbox-inner-container{
-  width:25px !important;
-  height:25px !important;
+.mat-checkbox-inner-container {
+  width: 25px !important;
+  height: 25px !important;
 }
 
 .full-screen-dialog .mat-dialog-container {
   width: 80vw;
-  height:80vh;
-  padding:0;
-  .dialog-title{
-    flex:1;
-    text-align:center;
+  height: 80vh;
+  padding: 0;
+  .dialog-title {
+    flex: 1;
+    text-align: center;
   }
-  .mat-dialog-content{
-    max-height:65vh;
+  .mat-dialog-content {
+    max-height: 65vh;
     padding: 16px;
-    margin:0;
-    overflow:auto;
-    display:block;
+    margin: 0;
+    overflow: auto;
+    display: block;
   }
-  .mat-dialog-actions{
+  .mat-dialog-actions {
     padding: 8px 16px;
   }
 }
 
-@media screen and (max-width:850px){
-  .cdk-overlay-pane.full-screen-dialog{
+@media screen and (max-width: 850px) {
+  .cdk-overlay-pane.full-screen-dialog {
     max-width: none !important;
   }
   .full-screen-dialog .mat-dialog-container {
     width: 100vw;
-    height:100vh;
+    height: 100vh;
   }
 
-  .mat-dialog-container{
-    min-width:80vw;
-  }
-}
-
-@media (min-width: 599px){
-  .app-content{
-    margin-top:64px;
-    height: calc(100% - 64px);
+  .mat-dialog-container {
+    min-width: 80vw;
   }
 }
