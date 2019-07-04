@@ -36,8 +36,7 @@
                 "src/sass"
               ]
             },
-            "scripts": [],
-            "aot": true
+            "scripts": []
           },
           "configurations": {
             "production": {
