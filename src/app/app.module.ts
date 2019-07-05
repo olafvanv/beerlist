@@ -17,7 +17,7 @@ import { ManageListComponent } from './manage-list/manage-list.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LoaderInterceptor } from './core/interceptors/loader-interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FirestoreSettingsToken } from '@angular/fire/firestore';
+import { FirestoreSettingsToken, AngularFirestoreModule } from '@angular/fire/firestore';
 import { AddBeerDialog } from './dialogs/add-beer-dialog/add-beer-dialog.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { UserBlockComponent } from './navigation/user-block/user-block.component';
@@ -42,6 +42,7 @@ import { UserBlockComponent } from './navigation/user-block/user-block.component
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule.enablePersistence(),
     CoreModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
