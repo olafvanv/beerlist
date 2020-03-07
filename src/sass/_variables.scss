@@ -1,9 +1,8 @@
-@import "material";
+@import "../app/core/material/theming/material";
 
 $primary-color: mat-color($beer-list-primary);
 $secondary-color: mat-color($beer-list-accent);
-
+$grey: mat-color($beer-list-primary, A200);
+$grey-dark: mat-color($beer-list-primary, A400);
+$grey-light: mat-color($beer-list-primary, A100);
 $text-color: #333333;
-$grey: #f0f0f0;
-$grey-dark: #e0e0e0;
-$grey-light: #fafafa;

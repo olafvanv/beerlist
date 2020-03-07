@@ -1,0 +1,12 @@
+@import "./custom-components";
+@import "./variables";
+
+@import "../app/core/material/theming/themes/default-theme.scss";
+@import "../app/core/material/theming/themes/dark-theme.scss";
+
+.default-theme{
+  @include custom-components-theme($beer-list-default-theme);
+}
+.dark-theme {
+  @include custom-components-theme($beer-list-dark-theme);
+}

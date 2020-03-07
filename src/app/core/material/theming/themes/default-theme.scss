@@ -1,0 +1,7 @@
+@import '../colors';
+
+$beer-list-primary: mat-palette($app-primary, 500, 300, 900);
+$beer-list-accent: mat-palette($app-accent);
+$beer-list-warn: mat-palette($mat-red);
+
+$beer-list-default-theme: mat-light-theme($beer-list-primary, $beer-list-accent, $beer-list-warn);

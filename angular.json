@@ -29,7 +29,6 @@
               "src/_redirects"
             ],
             "styles": [
-              "src/sass/_material.scss",
               "src/styles.scss"
             ],
             "stylePreprocessorOptions": {

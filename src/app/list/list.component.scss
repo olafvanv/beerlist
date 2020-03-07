@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 
 .filter-bar {
   border-bottom: 1px solid $grey-dark;
@@ -31,8 +31,5 @@
 @media (min-width: 599px) {
   .filter-bar {
     top: 64px;
-  }
-  .list-container {
-    padding-top: 64px;
   }
 }

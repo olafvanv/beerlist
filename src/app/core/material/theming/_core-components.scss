@@ -1,0 +1,5 @@
+@import "../../test/test.component.scss";
+
+@mixin core-components-theme($theme) {
+  @include test-component-theme($theme);
+}
